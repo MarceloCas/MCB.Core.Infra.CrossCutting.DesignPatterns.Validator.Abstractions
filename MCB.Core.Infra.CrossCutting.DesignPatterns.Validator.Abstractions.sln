@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{54A0DA0C-DC4B-4DAD-BE8D-429B0AD02650}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions", "src\MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions\MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.csproj", "{645EE058-9A44-4373-A9B8-F8787D123F89}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tst", "tst", "{D9A49EDE-5C48-4144-A89E-2B8C826DDAD7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.Tests", "tst\MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.Tests\MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.Tests.csproj", "{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bechmarks", "tst\Bechmarks\Bechmarks.csproj", "{87CF771C-9142-45A2-95A8-7E36A14974AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0D43FCBD-A009-412E-A2C6-98B038E3D8D5}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
+		.github\workflows\pack-and-publish.yml = .github\workflows\pack-and-publish.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{645EE058-9A44-4373-A9B8-F8787D123F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{645EE058-9A44-4373-A9B8-F8787D123F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{645EE058-9A44-4373-A9B8-F8787D123F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{645EE058-9A44-4373-A9B8-F8787D123F89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CF771C-9142-45A2-95A8-7E36A14974AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CF771C-9142-45A2-95A8-7E36A14974AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CF771C-9142-45A2-95A8-7E36A14974AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CF771C-9142-45A2-95A8-7E36A14974AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{645EE058-9A44-4373-A9B8-F8787D123F89} = {54A0DA0C-DC4B-4DAD-BE8D-429B0AD02650}
+		{EBF73DFD-7528-43FA-99DA-2C56E2E4EC79} = {D9A49EDE-5C48-4144-A89E-2B8C826DDAD7}
+		{87CF771C-9142-45A2-95A8-7E36A14974AF} = {D9A49EDE-5C48-4144-A89E-2B8C826DDAD7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FB44D0A4-C798-48C7-B3D9-9127C24007C9}
+	EndGlobalSection
+EndGlobal
