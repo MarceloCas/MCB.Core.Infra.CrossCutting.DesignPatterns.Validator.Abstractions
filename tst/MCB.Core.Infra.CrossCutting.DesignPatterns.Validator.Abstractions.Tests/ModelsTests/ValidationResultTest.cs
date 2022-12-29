@@ -26,16 +26,19 @@ public class ValidationResultTest
         // Assert
         validationResult.Should().NotBeNull();
         validationResult.HasValidationMessage.Should().BeTrue();
-        validationResult.HasError.Should().BeTrue();
+        validationResult.HasInformationMessages.Should().BeTrue();
+        validationResult.HasWariningMessages.Should().BeTrue();
+        validationResult.HasErrorMessages.Should().BeTrue();
         validationResult.IsValid.Should().BeFalse();
 
         validationResult.ValidationMessageCollection.Should().NotBeNull();
-        validationResult.ValidationMessageCollection.Should().NotBeSameAs(validationResult.ValidationMessageCollection);
         validationResult.ValidationMessageCollection.Should().HaveCount(3);
 
         emptyValidationResult.Should().NotBeNull();
         emptyValidationResult.HasValidationMessage.Should().BeFalse();
-        emptyValidationResult.HasError.Should().BeFalse();
+        emptyValidationResult.HasInformationMessages.Should().BeFalse();
+        emptyValidationResult.HasWariningMessages.Should().BeFalse();
+        emptyValidationResult.HasErrorMessages.Should().BeFalse();
         emptyValidationResult.IsValid.Should().BeTrue();
 
         emptyValidationResult.ValidationMessageCollection.Should().NotBeNull();
@@ -52,11 +55,12 @@ public class ValidationResultTest
         // Assert
         validationResult.Should().NotBeNull();
         validationResult.HasValidationMessage.Should().BeFalse();
-        validationResult.HasError.Should().BeFalse();
+        validationResult.HasErrorMessages.Should().BeFalse();
+        validationResult.HasInformationMessages.Should().BeFalse();
+        validationResult.HasWariningMessages.Should().BeFalse();
         validationResult.IsValid.Should().BeTrue();
 
         validationResult.ValidationMessageCollection.Should().NotBeNull();
-        validationResult.ValidationMessageCollection.Should().NotBeSameAs(validationResult.ValidationMessageCollection);
         validationResult.ValidationMessageCollection.Should().HaveCount(0);
     }
 
@@ -79,14 +83,14 @@ public class ValidationResultTest
         // Assert
 
         clonedValidationResult.Should().NotBeSameAs(validationResult);
-        clonedValidationResult.ValidationMessageCollection.Should().NotBeSameAs(validationResult.ValidationMessageCollection);
         clonedValidationResult.Should().NotBeNull();
         clonedValidationResult.HasValidationMessage.Should().BeTrue();
-        clonedValidationResult.HasError.Should().BeTrue();
+        clonedValidationResult.HasInformationMessages.Should().BeTrue();
+        clonedValidationResult.HasWariningMessages.Should().BeTrue();
+        clonedValidationResult.HasErrorMessages.Should().BeTrue();
         clonedValidationResult.IsValid.Should().BeFalse();
 
         clonedValidationResult.ValidationMessageCollection.Should().NotBeNull();
-        clonedValidationResult.ValidationMessageCollection.Should().NotBeSameAs(clonedValidationResult.ValidationMessageCollection);
         clonedValidationResult.ValidationMessageCollection.Should().HaveCount(3);
     }
 }

@@ -2,30 +2,33 @@
 
 namespace MCB.Core.Infra.CrossCutting.DesignPatterns.Validator.Abstractions.Models;
 
-public record struct ValidationResult
+public readonly record struct ValidationResult
 {
-    // Fields
-    private readonly List<ValidationMessage> _validationMessageCollection;
-
     // Properties
-    public IEnumerable<ValidationMessage> ValidationMessageCollection => _validationMessageCollection.AsReadOnly();
-    public bool HasValidationMessage => _validationMessageCollection.Count > 0;
-    public bool HasError => _validationMessageCollection.Any(q => q.ValidationMessageType == ValidationMessageType.Error);
-    public bool IsValid => !HasValidationMessage || !HasError;
+    public IEnumerable<ValidationMessage> ValidationMessageCollection { get; }
+    public IEnumerable<ValidationMessage> InformationValidationMessageCollection => ValidationMessageCollection.Where(q => q.ValidationMessageType == ValidationMessageType.Information);
+    public IEnumerable<ValidationMessage> WarningValidationMessageCollection => ValidationMessageCollection.Where(q => q.ValidationMessageType == ValidationMessageType.Warning);
+    public IEnumerable<ValidationMessage> ErrorValidationMessageCollection => ValidationMessageCollection.Where(q => q.ValidationMessageType == ValidationMessageType.Error);
+
+    public bool HasValidationMessage => ValidationMessageCollection.Any();
+    public bool HasInformationMessages => InformationValidationMessageCollection.Any();
+    public bool HasWariningMessages => WarningValidationMessageCollection.Any();
+    public bool HasErrorMessages => ErrorValidationMessageCollection.Any();
+    public bool IsValid => !HasValidationMessage || !HasErrorMessages;
 
     // Constructors
     public ValidationResult()
     {
-        _validationMessageCollection = new List<ValidationMessage>();
+        ValidationMessageCollection = Enumerable.Empty<ValidationMessage>();
     }
     public ValidationResult(IEnumerable<ValidationMessage> validationMessageCollection)
     {
-        _validationMessageCollection = validationMessageCollection.ToList();
+        ValidationMessageCollection = validationMessageCollection.ToArray();
     }
 
     // Public Methods
     public ValidationResult DeepClone()
     {
-        return new ValidationResult(_validationMessageCollection.ToList());
+        return new ValidationResult(ValidationMessageCollection.ToArray());
     }
 }

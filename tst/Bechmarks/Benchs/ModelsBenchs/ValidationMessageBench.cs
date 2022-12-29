@@ -12,7 +12,7 @@ namespace Bechmarks.Benchs.ModelsBenchs;
 [HtmlExporter]
 public class ValidationMessageBench
 {
-    [Params(10, 1_000, 100_000, 1_000_000)]
+    [Params(10, 100)]
     public int IterationCount { get; set; }
 
     [Benchmark(Baseline = true)]
